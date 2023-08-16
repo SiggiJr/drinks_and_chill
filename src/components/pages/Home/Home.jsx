@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { getIngredients } from "../../../utils/Functions/getData";
+import IngredientItem from "../../shared/IngredientItem/IngredientItem";
 
 const Home = () => {
+
+  const ingredients = ["Gin","Vodka","Rum","Scotch","Alkoholfrei","Zufall"]
+
   return ( 
-    <>
-    <h1>Home</h1>
-    </>
+    <section>
+      {ingredients.map(ingredient => <IngredientItem key={ingredient} ingredient={ingredient}/>)}
+    </section>
   );
 }
 
