@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import { getIngredients } from "../../../utils/Functions/getData";
 import IngredientItem from "../../shared/IngredientItem/IngredientItem";
 
 const Home = () => {
