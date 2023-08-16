@@ -1,0 +1,16 @@
+.header{
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    .menu_btn{
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+  background-color: #262B46;
+  color: #fff;
+  .image{
+    display: block;
+  }
+}
