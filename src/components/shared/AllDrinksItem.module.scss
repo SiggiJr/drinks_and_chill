@@ -1,24 +1,43 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
 }
-.div {
+
+.section {
+  background-color: #6fC3DF;
+  width: 30rem;
+  height: 20rem;
+
+  .div {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-  
-    image {
-      width: 100px;
-      height: auto;
-      margin: 10px 0;
-  
-      &:nth-child(odd) {
-        margin-left: 20px; 
-      }
-  
-      &:nth-child(even) {
-        margin-right: 20px; 
-      }
+    
+    .headline {
+      color: #FFF;
+      font-family: Montserrat;
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: 0.025rem;
+      line-height: 2.8rem;
+      transform: rotate(-90deg);
+      text-align: center;
+      width: 17rem;
+    }
+
+
+    .img {
+      width: 15rem;
+      height: 15rem;
+      flex-shrink: 0;
     }
   }
+
+}
+.link {
+  text-decoration: none;
+}
+.link:nth-of-type(odd){
+
+  .img {
+    order: -1
+  }
+}
