@@ -13,7 +13,6 @@ function App() {
     <CocktailDetails/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/cocktaildetails' element={<CocktailDetails/>}/>
         <Route path='/list/:ingredient' element={<AllDrinksListByIngredient/>}/>
       </Routes>
     </>

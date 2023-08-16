@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styles from "./AllDrinksItem.module.scss";
 
 const AllDrinksItem = (props) => {
 
@@ -8,7 +9,7 @@ const AllDrinksItem = (props) => {
                 <div>
                     <Link to={`/alldrinkslist/${props.id}`}></Link>
                     <h1>{props.name}</h1>
-                    <img src={props.image} alt=""/>
+                    <img src={props.image} alt={props.name}/>
                 </div>
             </section>
         )
