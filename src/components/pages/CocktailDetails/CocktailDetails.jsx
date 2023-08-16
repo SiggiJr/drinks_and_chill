@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const CocktailDetails = () => {
 
     const [cocktail, setCocktail] = useState([]);
 
+    const cocktailId = useParams().id
+
     useEffect(() => {
 
         
-        fetch("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007")
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`)
         .then((response) => {
             if (!response.ok) {
                 throw new Error("Fetch went wrong")
