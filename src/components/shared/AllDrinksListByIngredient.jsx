@@ -1,4 +1,3 @@
-//import ITEM from './';
 import { useEffect, useState } from "react";
 import AllDrinksItem from "../shared/AllDrinksItem";
 
@@ -17,7 +16,7 @@ const AllDrinksListByIngredient = () => {
         })
         .then(data => {
             setIsLoading(false)
-            return setAllCategories(data.drinks)
+            setAllCategories(data.drinks)
         })
         .catch((error) => console.log(error.message))
         }, [])
@@ -35,6 +34,7 @@ const AllDrinksListByIngredient = () => {
                 key={cat.idDrink}
                 id={cat.idDrink}
                 name={cat.strDrink}
+                image={cat.strDrinkThumb}
                 />
                 )}
             </div>
