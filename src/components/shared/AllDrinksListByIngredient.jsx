@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import AllDrinksItem from "../shared/AllDrinksItem";
 import { useParams } from "react-router-dom";
 
+
+
 const AllDrinksListByIngredient = () => {
 
     const [allCategories, setAllCategories] = useState([]);
@@ -28,9 +30,6 @@ const AllDrinksListByIngredient = () => {
             break;
         case "alkoholfrei":
             link="filter.php?a=Non_Alcoholic"
-            break;
-        case "zufall":
-            link="random.php"
             break;
     }
 
