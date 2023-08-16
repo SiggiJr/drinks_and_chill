@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 const AllDrinksItem = (props) => {
 
         return (
+                    <Link to={`/alldrinkslist/${props.id}`}>
             <section>
                 <div>
-                    <Link to={`/alldrinkslist/${props.id}`}></Link>
                     <h1>{props.name}</h1>
                     <img src={props.image} alt=""/>
                 </div>
             </section>
+                    </Link>
         )
 }
 export default AllDrinksItem;
