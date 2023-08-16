@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router';
+import styles from './CocktailDetails.module.scss'
 
 
 const CocktailDetails = () => {
@@ -11,7 +12,6 @@ const CocktailDetails = () => {
     const link = cocktailId === "random" ? "random.php" : `lookup.php?i=${cocktailId}` 
     
     useEffect(() => {
-        
         
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/${link}`)
         .then((response) => {
@@ -27,26 +27,15 @@ const CocktailDetails = () => {
     
     let newIngredientArray = [];
     let newMeasureArray = [];
-    
-    
-    
     for (const [key, value] of Object.entries(cocktail)) 
     
     {
         if (key.includes("strIngredient") && value) {
-            
-            
-            
             const ingredientObject = {
                 id: key.slice(-1),
                 ingredient:value
             };
-            
-            
-            
             newIngredientArray = [...newIngredientArray, ingredientObject]
-            
-            
             // newIngredientArray = [...newIngredientArray, value]
         }
         
@@ -60,16 +49,9 @@ const CocktailDetails = () => {
     }
     
     const navigator = useNavigate();
-    
-    
-    console.log(newIngredientArray)
-                // console.log(newMeasureArray)
-
-                
-
 
     return ( 
-        <div>
+        <div className={styles.div}>
             <button onClick={() => navigator(-1)} >Zurück</button>
             <h1>CocktailDetails</h1>
                 <div key={cocktail.idDrink}>
