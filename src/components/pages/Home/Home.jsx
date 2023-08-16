@@ -4,17 +4,7 @@ import IngredientItem from "../../shared/IngredientItem/IngredientItem";
 
 const Home = () => {
 
-  // const [ingredients, setIngredients] = useState([])
-
-  const ingredients = [
-    "Gin","Vodka","Rum","Scotch","Alkoholfrei","Zufall",
-  ]
-
-  // useEffect(() => {
-  //   getIngredients()
-  //   .then((ingredientsData) => setIngredients(ingredientsData));
-  //   setIngredients(getIngredients)
-  // }, [])
+  const ingredients = ["Gin","Vodka","Rum","Scotch","Alkoholfrei","Zufall"]
 
   return ( 
     <section>
