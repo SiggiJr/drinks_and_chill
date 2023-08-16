@@ -14,40 +14,71 @@ const CocktailDetails = () => {
             }
             return response.json()
         })
-        .then((cocktailData) => setCocktail(cocktailData.drinks))
+        .then((cocktailData) => setCocktail(cocktailData.drinks[0]))
         .catch((error) => console.log(error.message));
     }, [])
         console.log(cocktail);
 
+            let newIngredientArray = [];
+            let newMeasureArray = [];
+            
+            
+
+                for (const [key, value] of Object.entries(cocktail)) 
+                
+                {
+                    if (key.includes("strIngredient") && value) {
+
+
+
+                        const ingredientObject = {
+                            id: key.slice(-1),
+                            ingredient:value
+                        };
+                        
+                        
+
+                        newIngredientArray = [...newIngredientArray, ingredientObject]
+
+
+                        // newIngredientArray = [...newIngredientArray, value]
+                    }
+
+                    if (key.includes("strMeasure") && value) {
+                        newIngredientArray.map(ingredient => {
+                            if (key.slice(-1) === ingredient.id) {
+                                ingredient.measure = value
+                            }
+                        })
+                    }
+                }
+
+
+
+                console.log(newIngredientArray)
+                // console.log(newMeasureArray)
+
+                
+
+
     return ( 
         <div>
             <h1>CocktailDetails</h1>
-            {cocktail.map((drinks) => (
-                <div key={drinks.idDrink}>
-                    <h1>{drinks.strDrink}</h1>
-                    <img src={drinks.strDrinkThumb} alt="Cocktail Preview Picture" />
+                <div key={cocktail.idDrink}>
+                    <h1>{cocktail.strDrink}</h1>
+                    <img src={cocktail.strDrinkThumb} alt="Cocktail Preview Picture" />
                     <div>
                         <h2>Zutaten</h2>
-                        <span>
-                        {drinks.strIngredient1}
-                        {drinks.strMeasure1}
-                        </span>
-                        <span>
-                        {drinks.strIngredient2}
-                        {drinks.strMeasure2}
-                        </span>
-                        <span>
-                            // strIngredient1 ? value : 
-                        {drinks.strIngredient3}
-                        {drinks.strMeasure3}
-                        </span>
+                        <ul>
+                            {newIngredientArray.map(ingredient => {
+                                return <li key={ingredient.id}>{`${ingredient.ingredient} ${ingredient.measure ? ingredient.measure: ""}`}</li>
+                            })}
+                        </ul>
                     </div>
                     <div>
-                        {drinks.strInstructions}
+                        {cocktail.strInstructions}
                     </div>
-
                 </div>
-            ))}
         </div>
     )
 }
