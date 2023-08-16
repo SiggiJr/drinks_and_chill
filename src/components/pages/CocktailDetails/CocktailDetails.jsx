@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router';
 import styles from './CocktailDetails.module.scss'
-
+// import { theX } from '../../../assets/img/react.svg'
 
 const CocktailDetails = () => {
     
@@ -52,21 +52,24 @@ const CocktailDetails = () => {
 
     return ( 
         <div className={styles.div}>
-            <button onClick={() => navigator(-1)} >Zurück</button>
-            <h1>CocktailDetails</h1>
+            <div className={styles.headerDiv}>
+                <button className={styles.button} onClick={() => navigator(-1)} >X</button>
+                <h1 className={styles.headline} >{cocktail.strDrink}</h1>
+            </div>
                 <div key={cocktail.idDrink}>
-                    <h1>{cocktail.strDrink}</h1>
-                    <img src={cocktail.strDrinkThumb} alt="Cocktail Preview Picture" />
-                    <div>
+                    <img className={styles.image} src={cocktail.strDrinkThumb} alt="Cocktail Preview Picture" />
+                    <div className={styles.Zutaten} >
+                        <div className={styles.test}>
                         <h2>Zutaten</h2>
                         <ul>
                             {newIngredientArray.map(ingredient => {
-                                return <li key={ingredient.id}>{`${ingredient.ingredient} ${ingredient.measure ? ingredient.measure: ""}`}</li>
+                                return <li className={styles.list} key={ingredient.id}>{`${ingredient.ingredient} ${ingredient.measure ? ingredient.measure: ""}`}</li>
                             })}
                         </ul>
-                    </div>
-                    <div>
-                        {cocktail.strInstructions}
+                        </div>
+                        <div className={styles.instruction} >
+                            {cocktail.strInstructions}
+                        </div>
                     </div>
                 </div>
         </div>
