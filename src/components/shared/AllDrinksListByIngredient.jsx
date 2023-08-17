@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import AllDrinksItem from "../shared/AllDrinksItem";
 import { useParams } from "react-router-dom";
+
+import Footer from "./Footer/Footer";
+
 import { useOutletContext } from "react-router-dom";
+
 
 
 
@@ -82,6 +86,7 @@ const AllDrinksListByIngredient = ({drinksData}) => {
                 />
                 )}
             </div>
+            <Footer/>
             </>
         )
 }

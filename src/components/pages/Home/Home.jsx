@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import IngredientItem from "../../shared/IngredientItem/IngredientItem";
+import Footer from "../../shared/Footer/Footer"
 import styles from "./Home.module.scss";
 import { useOutletContext } from "react-router-dom";
 
@@ -16,6 +17,7 @@ const Home = () => {
     <section className={styles.section}>
       {ingredients.map(ingredient => <IngredientItem key={ingredient} ingredient={ingredient}/>)}
     </section>
+    <Footer/>
     </>
   );
 }
