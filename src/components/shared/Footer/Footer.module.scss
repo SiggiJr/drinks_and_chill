@@ -1,0 +1,32 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../../fonts/Montserrat/);
+}
+@font-face {
+    font-family: Playfair;
+    src: url(../../fonts/Playfair_display/PlayfairDisplay-VariableFont_wght.ttf);
+}
+.section {
+    background-color: #262B46;
+
+    .article {
+        color: white;
+        text-align: center;
+
+        .headline {
+            font-family: Playfair;
+            font-size: 1.5rem;
+
+            margin-bottom: 4rem;
+            letter-spacing: 0.2rem;
+            width: 27rem;
+        }
+        .p_text {
+            font-family: Montserrat;
+            font-size: 1rem;
+            line-height: 1.6rem;
+
+            width: 23rem;
+        }
+    }
+}

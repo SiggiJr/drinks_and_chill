@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AllDrinksItem from "../shared/AllDrinksItem";
 import { useParams } from "react-router-dom";
+import Footer from "./Footer/Footer";
 
 
 
@@ -79,6 +80,7 @@ const AllDrinksListByIngredient = ({drinksData}) => {
                 />
                 )}
             </div>
+            <Footer/>
             </>
         )
 }
