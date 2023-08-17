@@ -2,9 +2,14 @@
   font-family: Montserrat;
   src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
 }
+.link {
+  text-decoration: none;
+}
 
+//even
 .section {
-  background-color: #6fC3DF;
+  background-color:  #8d82c4;
+  padding: 48px 32px;
   width: 30rem;
   height: 20rem;
 
@@ -20,24 +25,52 @@
       line-height: 2.8rem;
       transform: rotate(-90deg);
       text-align: center;
-      width: 17rem;
+      width: 20rem;
+      height: 12rem;
+      padding: 0.8rem;
     }
-
 
     .img {
       width: 15rem;
       height: 15rem;
-      flex-shrink: 0;
+      padding: 20px;
     }
   }
 
 }
-.link {
-  text-decoration: none;
-}
+//odd
 .link:nth-of-type(odd){
+
+  .section {
+    background-color: #6fC3DF;
+  }
 
   .img {
     order: -1
+  }
+}
+//
+.link:nth-of-type(3n){
+
+  .section {
+    background-color: #ec8d81;
+  }
+}
+.link:nth-of-type(4n){
+
+  .section {
+    background-color: #e7b788;
+  }
+}
+.link:nth-of-type(5n){
+
+  .section {
+    background-color: #8ea9e8;
+  }
+}
+.link:nth-of-type(6n){
+
+  .section {
+    background-color: #87c5a4;
   }
 }
