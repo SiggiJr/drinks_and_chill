@@ -3,6 +3,9 @@ import image1 from '../../../assets/img/AddYourDrinkImage1.png';
 import image2 from '../../../assets/img/AddYourDrinkImage2.png';
 import image3 from '../../../assets/img/AddYourDrinkImage3.png';
 import styles from './AddYourDrink.module.scss';
+
+import Footer from '../../shared/Footer/Footer';
+
 import { useOutletContext } from 'react-router-dom';
 
 
@@ -43,6 +46,7 @@ const AddYourDrink = () => {
             </article>
         </section>
         </div>
+        <Footer/>
         </>
     );
 }
