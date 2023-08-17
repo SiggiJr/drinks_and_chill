@@ -1,45 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import arrowImage from '../../../assets/img/arrow.png'
 import styles from './Header.module.scss'
 import Menu from '../Menu/Menu';
+import { Outlet, useParams } from 'react-router-dom';
+import AllDrinksListByIngredient from '../AllDrinksListByIngredient';
 
-const Header = () => {
+const Header = ({searchInput, setSearchInput}) => {
 
   const [menuOpen, setMenuOpen] = useState(false)
-  const [cocktails, setCocktails] = useState([])
-  const [searchInput, setSearchInput] = useState("")
-  
-  useEffect(() => {
-    const searchTimeoutId = setTimeout(() => {
-      if (searchInput === "") {
-        setCocktails([])
-      } else {
-        fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput}`)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error("Fetch fehlgeschlagen")
-          }
-          return response.json()
-        })
-        .then(listData => setCocktails(listData))
-      }
-      }, 300)
-    
-    return () => {
-      clearTimeout(searchTimeoutId)
-    }
-  }, [searchInput])
+
+  const params = useParams()
+  console.log(params);
   
   const handleSearchInput = (event) => {
   setSearchInput(event.target.value)
   }
 
-// if (cocktails !== "") {
-//   return
-// }
 
+console.log(searchInput);
 
   return ( 
+    <>
     <header className={styles.header}>
     <nav className={styles.navbar}>
     <p className="logo">DRINKS&CHILL</p>
@@ -66,6 +47,10 @@ const Header = () => {
         </div>
       </div>
     </header>
+    {
+      searchInput === "" ? <Outlet/> : <AllDrinksListByIngredient drinksData={searchInput}/>
+    }
+    </>
   );
 }
 
