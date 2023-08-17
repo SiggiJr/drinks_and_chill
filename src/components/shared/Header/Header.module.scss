@@ -11,8 +11,9 @@
   font-family: Playfair;
   font-size: 2rem;
   width: 30rem;
-  height: 30rem;
+  // height: 30rem;
   padding: 1rem 1rem;
+
   .navbar{
     display: flex;
     justify-content: space-between;
@@ -47,7 +48,10 @@
   display: flex;
   justify-content: center;
   margin-top: 2.5rem;
+  margin-bottom: 2.8rem;
 }
+
+
 .input {
   border-color: white;
   border-radius: 0.4rem;

@@ -8,10 +8,14 @@
 }
 .section {
     background-color: #262B46;
+    width: 30rem;
+    padding-top: 150px;
+    padding-left: 30px;
+    padding-bottom: 50px;
 
     .article {
         color: white;
-        text-align: center;
+        text-align: left;
 
         .headline {
             font-family: Playfair;

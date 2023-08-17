@@ -5,6 +5,7 @@ import styles from "./AllDrinksItem.module.scss";
 const AllDrinksItem = (props) => {
 
         return (
+            <>
                     <Link className={styles.link} to={`/alldrinkslist/${props.id}`}>
             <section className={styles.section}>
                 <div className={styles.div}>
@@ -13,6 +14,7 @@ const AllDrinksItem = (props) => {
                 </div>
             </section>
                     </Link>
+            </>
         )
 }
 export default AllDrinksItem;

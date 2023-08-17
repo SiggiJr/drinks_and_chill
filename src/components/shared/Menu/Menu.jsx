@@ -4,7 +4,7 @@ import styles from './Menu.module.scss'
 const Menu = () => {
   
   return ( 
-    <ul>
+    <ul className={styles.ul_item}>
       <li className={styles.list_item}>
     <Link to={"/"} className={styles.link}>Home</Link>
       </li>

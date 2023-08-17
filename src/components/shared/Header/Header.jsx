@@ -35,7 +35,7 @@ const Header = () => {
     </article>
     {showSearch && <input className={styles.input} type="text" name="serach" id="search" placeholder="type something" onChange={handleSearchInput}/>}
       <div className={styles.arrow_wrapper}>
-        <div className="arrow">
+        <div className={styles.arrow} >
           <img src={arrowImage} alt="arrow icon" className={styles.image}/>
           <img src={arrowImage} alt="arrow icon" className={styles.image}/>
           <img src={arrowImage} alt="arrow icon" className={styles.image}/>
