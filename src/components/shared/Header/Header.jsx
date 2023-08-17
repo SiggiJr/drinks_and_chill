@@ -5,19 +5,17 @@ import Menu from '../Menu/Menu';
 import { Outlet, useParams } from 'react-router-dom';
 import AllDrinksListByIngredient from '../AllDrinksListByIngredient';
 
-const Header = ({searchInput, setSearchInput}) => {
+const Header = () => {
+
+  const [searchInput, setSearchInput] = useState("")
 
   const [menuOpen, setMenuOpen] = useState(false)
-
-  const params = useParams()
-  console.log(params);
   
   const handleSearchInput = (event) => {
   setSearchInput(event.target.value)
   }
 
-
-console.log(searchInput);
+  const [showSearch, setShowSearch] = useState(true)
 
   return ( 
     <>
@@ -35,10 +33,7 @@ console.log(searchInput);
       <p className={styles.p_text}>HERZLICH WILLKOMMEN IN DER WELT DER COCKTAILS 
         UND GETRÄNKE!</p>
     </article>
-    <form className={styles.search_form}>
-      <input className={styles.input} type="text" name="serach" id="search" placeholder="type something"/>
-      <button type="submit" className={styles.search_btn}>Search</button>
-    </form>
+    {showSearch && <input className={styles.input} type="text" name="serach" id="search" placeholder="type something" onChange={handleSearchInput}/>}
       <div className={styles.arrow_wrapper}>
         <div className="arrow">
           <img src={arrowImage} alt="arrow icon" className={styles.image}/>

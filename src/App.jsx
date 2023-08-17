@@ -5,25 +5,16 @@ import Home from './components/pages/Home/Home'
 import CocktailDetails from './components/pages/CocktailDetails/CocktailDetails'
 import Header from './components/shared/Header/Header';
 import { useState } from 'react';
+import AddYourDrink from './components/pages/AddYourDrink/AddYourDrink';
 
 function App() {
-
-
-  const [searchInput, setSearchInput] = useState("")
-
-  const handleSearchInput = (event) => {
-    setSearchInput(event.target.value)
-    }
-
-
-
   return (
     <>
       <Routes>
-        <Route element={<Header searchInput={searchInput} setSearchInput={setSearchInput}/>}>
-        {/* <Route element={<UI/>}> */}
-        <Route path='/' element={<Home setSearchInput={setSearchInput}/>}/>
+        <Route element={<Header/>}>
+        <Route path='/' element={<Home/>}/>
         <Route path='/list/:ingredient' element={<AllDrinksListByIngredient/>}/>
+        <Route path='/add_a_drink' element={<AddYourDrink/>}/>
         </Route>
         <Route path={`/alldrinkslist/:id`} element={<CocktailDetails/>}/>
       </Routes>
