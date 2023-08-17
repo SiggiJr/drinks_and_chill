@@ -11,8 +11,9 @@
   font-family: Playfair;
   font-size: 2rem;
   width: 30rem;
-  height: 30rem;
+  // height: 30rem;
   padding: 1rem 1rem;
+
   .navbar{
     display: flex;
     justify-content: space-between;
@@ -47,18 +48,21 @@
   display: flex;
   justify-content: center;
   margin-top: 2.5rem;
+  margin-bottom: 2.8rem;
+}
+
+
+.input {
+  border-color: white;
+  border-radius: 0.4rem;
+  font-family: Montserrat;
+  padding: 0.6rem 0.8rem;
+  margin-left: 1.8rem;
 }
 .search_form {
-  margin-left: 1.8rem;
   display: flex;
   gap: 0.5rem;
 
-  .input {
-    border-color: white;
-    border-radius: 0.4rem;
-    font-family: Montserrat;
-    padding: 0.6rem 0.8rem;
-  }
   .search_btn {
     border-color: #6FC3DF;
     background-color: #6FC3DF;
