@@ -2,7 +2,7 @@ import { useState } from 'react';
 import arrowImage from '../../../assets/img/arrow.png'
 import styles from './Header.module.scss'
 import Menu from '../Menu/Menu';
-import { Outlet, useParams } from 'react-router-dom';
+import { Link, Outlet, useParams } from 'react-router-dom';
 import AllDrinksListByIngredient from '../AllDrinksListByIngredient';
 
 const Header = () => {
@@ -21,7 +21,9 @@ const Header = () => {
     <>
     <header className={styles.header}>
     <nav className={styles.navbar}>
-    <p className={styles.logo}>DRINKS&CHILL</p>
+      <Link to={"/"} className={styles.logo}>
+      DRINKS&CHILL
+      </Link>
     <p className={styles.menu_btn}
     onClick={() => setMenuOpen(prevMenu => !prevMenu)}>
       MENU
