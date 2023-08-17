@@ -31,6 +31,9 @@ const AllDrinksListByIngredient = () => {
         case "alkoholfrei":
             link="filter.php?a=Non_Alcoholic"
             break;
+        case "alkoholisch":
+            link="filter.php?a=Alcoholic"
+            break;
     }
 
     useEffect(() => {

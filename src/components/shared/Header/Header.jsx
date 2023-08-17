@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import arrowImage from '../../../assets/img/arrow.png'
 import styles from './Header.module.scss'
 import Menu from '../Menu/Menu';
@@ -6,6 +6,38 @@ import Menu from '../Menu/Menu';
 const Header = () => {
 
   const [menuOpen, setMenuOpen] = useState(false)
+  const [cocktails, setCocktails] = useState([])
+  const [searchInput, setSearchInput] = useState("")
+  
+  useEffect(() => {
+    const searchTimeoutId = setTimeout(() => {
+      if (searchInput === "") {
+        setCocktails([])
+      } else {
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Fetch fehlgeschlagen")
+          }
+          return response.json()
+        })
+        .then(listData => setCocktails(listData))
+      }
+      }, 300)
+    
+    return () => {
+      clearTimeout(searchTimeoutId)
+    }
+  }, [searchInput])
+  
+  const handleSearchInput = (event) => {
+  setSearchInput(event.target.value)
+  }
+
+// if (cocktails !== "") {
+//   return
+// }
+
 
   return ( 
     <header className={styles.header}>
@@ -23,7 +55,7 @@ const Header = () => {
         und Getränke!</p>
     </article>
     <form className="search_form">
-      <input type="text" name="serach" id="search" />
+      <input type="text" name="serach" id="search" onChange={handleSearchInput} value={searchInput}/>
       <button type="submit" className="search_btn">Search</button>
     </form>
       <div className="arrow_wrapper">
