@@ -1,0 +1,53 @@
+.div {
+    background-color: #262B46;
+    color: #FFF;
+    height: 100vh;
+}
+
+.overall_add {
+    display: flex;
+}
+
+.form {
+    width: 300px;
+}
+
+.form_div :nth-child(n) {
+    width: 300px;
+}
+
+.form_div :nth-child(1n) {
+    opacity: 0.8;
+    background: #6FC3DF;
+}
+
+.form_div :nth-child(2n) {
+    opacity: 0.8;
+    background: #8D82C4;
+}
+
+.form_div :nth-child(3n) {
+    opacity: 0.8;
+    background: #EC8D81;
+}
+
+.form_div :nth-child(4n) {
+    opacity: 0.8;
+    background: #E7B788;
+}
+
+.form_div :nth-child(5n) {
+    opacity: 0.8;
+    background: #8EA9E8;
+}
+
+.form_div :nth-child(6n) {
+    opacity: 0.8;
+    background: #87C5A4;
+}
+
+.article_img {
+    display: flex;
+}
+
+
