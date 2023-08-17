@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import AllDrinksItem from "../shared/AllDrinksItem";
 import { useParams } from "react-router-dom";
+
 import Footer from "./Footer/Footer";
+
+import { useOutletContext } from "react-router-dom";
+
 
 
 
@@ -10,7 +14,9 @@ const AllDrinksListByIngredient = ({drinksData}) => {
     const [allCategories, setAllCategories] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    console.log(drinksData);
+    // const {showSearch ,setShowSearch} = useOutletContext();
+
+    // setShowSearch(true)
 
     let link;
 
@@ -62,7 +68,7 @@ const AllDrinksListByIngredient = ({drinksData}) => {
         return () => {
                 clearTimeout(timeouId)
             }
-    }, [drinksData])
+    }, [drinksData, param])
     if(isLoading) {
         return <p>Loading...</p>
     }
