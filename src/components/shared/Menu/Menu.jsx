@@ -14,6 +14,9 @@ const Menu = () => {
       <li className={styles.list_item}>
     <Link to={"/list/alkoholfrei"} className={styles.link}>nicht alkoholische Getränke</Link>
       </li>
+      <li className={styles.list_item}>
+    <Link to={"/add_a_drink"} className={styles.link}>Cocktail hinzufügen</Link>
+      </li>
     </ul>
   );
 }

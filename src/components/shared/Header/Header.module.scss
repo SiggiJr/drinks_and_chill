@@ -48,17 +48,17 @@
   justify-content: center;
   margin-top: 2.5rem;
 }
-.search_form {
+.input {
+  border-color: white;
+  border-radius: 0.4rem;
+  font-family: Montserrat;
+  padding: 0.6rem 0.8rem;
   margin-left: 1.8rem;
+}
+.search_form {
   display: flex;
   gap: 0.5rem;
 
-  .input {
-    border-color: white;
-    border-radius: 0.4rem;
-    font-family: Montserrat;
-    padding: 0.6rem 0.8rem;
-  }
   .search_btn {
     border-color: #6FC3DF;
     background-color: #6FC3DF;
