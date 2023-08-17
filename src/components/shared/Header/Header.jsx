@@ -23,27 +23,27 @@ console.log(searchInput);
     <>
     <header className={styles.header}>
     <nav className={styles.navbar}>
-    <p className="logo">DRINKS&CHILL</p>
+    <p className={styles.logo}>DRINKS&CHILL</p>
     <p className={styles.menu_btn}
     onClick={() => setMenuOpen(prevMenu => !prevMenu)}>
       MENU
     </p>
     </nav>
     {menuOpen && <Menu/>}
-    <article>
+    <article className={styles.article}>
       <h1>Cocktails & Getränke!</h1>
-      <p>Herzlich Willkommen in der Welt der Cocktails 
-        und Getränke!</p>
+      <p className={styles.p_text}>HERZLICH WILLKOMMEN IN DER WELT DER COCKTAILS 
+        UND GETRÄNKE!</p>
     </article>
-    <form className="search_form">
-      <input type="text" name="serach" id="search" onChange={handleSearchInput} value={searchInput}/>
-      <button type="submit" className="search_btn">Search</button>
+    <form className={styles.search_form}>
+      <input className={styles.input} type="text" name="serach" id="search" placeholder="type something"/>
+      <button type="submit" className={styles.search_btn}>Search</button>
     </form>
-      <div className="arrow_wrapper">
+      <div className={styles.arrow_wrapper}>
         <div className="arrow">
-          <img src={arrowImage} alt="" className={styles.image}/>
-          <img src={arrowImage} alt="" className={styles.image}/>
-          <img src={arrowImage} alt="" className={styles.image}/>
+          <img src={arrowImage} alt="arrow icon" className={styles.image}/>
+          <img src={arrowImage} alt="arrow icon" className={styles.image}/>
+          <img src={arrowImage} alt="arrow icon" className={styles.image}/>
         </div>
       </div>
     </header>

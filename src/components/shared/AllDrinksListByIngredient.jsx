@@ -69,7 +69,6 @@ const AllDrinksListByIngredient = ({drinksData}) => {
 
         return (
             <>
-            <h1>All Drinks</h1>
             <div>
                 {allCategories.map((cat) =>
                 <AllDrinksItem 
