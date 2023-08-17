@@ -2,12 +2,25 @@ import { useState } from 'react';
 import arrowImage from '../../../assets/img/arrow.png'
 import styles from './Header.module.scss'
 import Menu from '../Menu/Menu';
+import { Outlet, useParams } from 'react-router-dom';
+import AllDrinksListByIngredient from '../AllDrinksListByIngredient';
 
-const Header = () => {
+const Header = ({searchInput, setSearchInput}) => {
 
   const [menuOpen, setMenuOpen] = useState(false)
 
+  const params = useParams()
+  console.log(params);
+  
+  const handleSearchInput = (event) => {
+  setSearchInput(event.target.value)
+  }
+
+
+console.log(searchInput);
+
   return ( 
+    <>
     <header className={styles.header}>
     <nav className={styles.navbar}>
     <p className={styles.logo}>DRINKS&CHILL</p>
@@ -34,6 +47,10 @@ const Header = () => {
         </div>
       </div>
     </header>
+    {
+      searchInput === "" ? <Outlet/> : <AllDrinksListByIngredient drinksData={searchInput}/>
+    }
+    </>
   );
 }
 
